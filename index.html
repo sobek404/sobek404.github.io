@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Page Title</title>
+<style>
+  textarea{
+    width: 500px;
+    height: 150px;
+  }
+</style>
 <body>
-  
-  <button id="our_button">Hello</button>
+  <button id="connect_button">Connect Device</button>
+  <button id="run_button">Run</button><br />
+  Test Script:<br />
+  <textarea id="script_area"></textarea><br />
+  Output:<br />
+  <textarea id="output_area" readonly="true"></textarea><br />
   <script src="out/app-bundle.js"></script>
+  Video:<br />
+  <video autoplay="true" id="video"></video>
 </body>

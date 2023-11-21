@@ -4,19 +4,38 @@
 <style>
   html * {
     font-family: Arial, Helvetica, sans-serif;
-
+    padding:2%;
+    margin:0.5%;
     
   }
 
+  html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+  h1{
+    justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  }
+
 .columnFlex{
+  justify-content: center;
   display: flex;
   flex-direction: column;
   padding:3%;
   margin:1%;
+  
 }
 .rowFlex{
   display:flex;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap:wrap;
 }
   textarea{
     height: 33%;
@@ -33,6 +52,9 @@
   }
 </style>
 <body>
+
+  <h1> PAL</h1>
+
   <div class="rowFlex">
 
     <div class="columnFlex">

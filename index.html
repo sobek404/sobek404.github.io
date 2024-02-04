@@ -4,7 +4,7 @@
 <style>
   html * {
     font-family: Arial, Helvetica, sans-serif;
-    padding:2%;
+    padding:1%;
     margin:0.5%;
     
   }
@@ -16,38 +16,38 @@ body {
   position: relative;
 }
 
-  h1{
-    justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  }
+
 
 .columnFlex{
-  justify-content: center;
+  justify-content: start;
   display: flex;
   flex-direction: column;
-  padding:3%;
+  padding:1%;
   margin:1%;
   
 }
 .rowFlex{
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap:wrap;
 }
+
+.noflex{
+  display:block;
+}
   textarea{
     height: 33%;
-
     font-style: italic;
   }
 
   button{
-    margin:3%;
     height:50%;
     width:60;
+    border-radius: 10px;
+    background-color: 	#3DDC84;
   }
+
 
   .button-red{
     background-color: red;
@@ -62,37 +62,99 @@ body {
     background-color:yellow;
     font-style: italic;
   }
+
+  .top{
+    overflow: scroll;
+    width: 40em;
+    text-overflow: clip;
+    height: 30em;
+    white-space: nowrap;
+    resize: both;
+    font-style: italic;
+    font-size: smaller;
+  }
+
+
+  .logcat{
+    overflow: scroll;
+    width: 40em;
+    text-overflow: clip;
+    height: 30em;
+    white-space: nowrap;
+    resize: both;
+    font-style: italic;
+    font-size: smaller;
+  }
+
+  .hidden{
+    display:none;  
+  }
+
+  .output_area{
+    overflow: scroll;
+    width: 40em;
+    text-overflow: clip;
+    height: 30em;
+    white-space: nowrap;
+    resize: both;
+    font-style: italic;
+    font-size: smaller;
+  }
+
+  .new_session{
+    display:none;
+  }
+
+  .main_view{
+    display:none;
+  }
+
+  .form{
+    padding:0px;
+    margin:0px;
+  }
+
 </style>
 <body>
 
-  <h1> PAL</h1>
-
-  <div class="rowFlex">
-
-    <div class="columnFlex">
-      <button id="connect_button">Connect Device</button>
-      <button id="logcatsynced_button">View Logcat Synced</button>
-      <button id="record_button">Start Recording</button>
-      <button id="run_button">Run Commands</button>
-      <button id="bugreport_button">Take Bugreport</button>
-      <button id="save_button">Save Session Output</button>
-
-      </div>
-
-    <div class="columnFlex">
-      <video autoplay="true" id="video"></video>
-    </div>
+  <h2>Android WebUSB Synchronized Video + Log Util</h2>
 
   <div class="columnFlex">
-  ADB Commands<br />
+    <div id="buttons" class="rowFlex">
+      <button class="pre_session" id="connect_button">New Session (create .zip)</button>
+      <form class="pre_session form" id="open-saved">
+        <input type="file" id="file-input" class="hidden">
+      </form>
+      <button class="pre_session" id="file_open_button">Load Previous Session (load .zip)</button>
+      <button class="new_session" id="record_button">Start Recording</button>
+      <button class="new_session" id="run_button">Run Commands</button>
+      <button class="new_session" id="bugreport_button">Take Bugreport</button>
+      <button class="new_session" id="save_button">Save Session Output</button>
+      </div>
+    <div class="rowFlex main_view">
+      <video autoplay="true" controls id="video"></video>
+    
 
-  <textarea id="script_area"></textarea><br />
 
-  ADB Commands Output<br />
-  <textarea id="output_area" readonly="true"></textarea><br />
-
+  <div class="noflex">
   Logcat<br />
-  <textarea id="logcat_area" readonly="true"></textarea><br />
+  <div class="logcat" id="logcat_area" ></div>
+</div>
+<div class="noflex">
+  TOP
+      <div class="top" id="top"></div><br />
+    </div>
+<div class="noflex">
+  ADB Commands to Run<br />
+
+  <textarea id="script_area"></textarea>
+</div>
+
+
+<div class="noflex">
+  ADB Commands Output<br />
+  <div class="output_area" id="output_area" ></div><br />
+</div>
 
 
 </div>

@@ -15,6 +15,10 @@
 body {
   position: relative;
 }
+#de_dupe_logs
+{
+    cursor: pointer;
+}
 
 
 
@@ -114,6 +118,10 @@ body {
     margin:0px;
   }
 
+  .show_me{
+    display:block;
+  }
+
 </style>
 <body>
 
@@ -128,16 +136,19 @@ body {
       <button class="pre_session" id="file_open_button">Load Previous Session (load .zip)</button>
       <button class="new_session" id="record_button">Start Recording</button>
       <button class="new_session" id="run_button">Run Commands</button>
+      
       <button class="new_session" id="bugreport_button">Take Bugreport</button>
       <button class="new_session" id="save_button">Save Session Output</button>
+     
       </div>
+      
     <div class="rowFlex main_view">
       <video autoplay="true" controls id="video"></video>
     
 
 
   <div class="noflex">
-  Logcat<br />
+  Logcat  <span class="new_session playback_session" id="de_dupe_logs">De-dupe: On</span><br />
   <div class="logcat" id="logcat_area" ></div>
 </div>
 <div class="noflex">
@@ -158,7 +169,7 @@ body {
 
 
 </div>
-  <script src="out/app-bundle.js?v=1707081681"></script>
+  <script src="out/app-bundle.js?v=1707083822"></script>
 
 </div>
 </body>

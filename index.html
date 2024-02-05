@@ -121,6 +121,9 @@ body {
   .show_me{
     display:block;
   }
+  #run_button{
+    height:2em;
+  }
 
 </style>
 <body>
@@ -135,7 +138,7 @@ body {
       </form>
       <button class="pre_session" id="file_open_button">Load Previous Session (load .zip)</button>
       <button class="new_session" id="record_button">Start Recording</button>
-      <button class="new_session" id="run_button">Run Commands</button>
+
       
       <button class="new_session" id="bugreport_button">Take Bugreport</button>
       <button class="new_session" id="save_button">Save Session Output</button>
@@ -159,6 +162,7 @@ body {
   ADB Commands to Run<br />
 
   <textarea id="script_area"></textarea>
+  <button class="new_session" id="run_button">Run Commands</button>
 </div>
 
 
@@ -169,7 +173,7 @@ body {
 
 
 </div>
-  <script src="out/app-bundle.js?v=1707083822"></script>
+  <script src="out/app-bundle.js?v=1707136276"></script>
 
 </div>
 </body>
